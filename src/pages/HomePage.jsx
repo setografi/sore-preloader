@@ -57,17 +57,15 @@ function HomePage() {
       <div ref={container} className="app">
         <div className="preloader fixed top-0 left-0 w-full h-full flex justify-center items-center bg-blackPreloading overflow-hidden z-10">
           <div className="text-container flex flex-row gap-1 overflow-hidden text-white opacity-0">
-            <h1 className="text-5xl lg:text-9xl font-bold">S</h1>
-            <h1 className="text-5xl lg:text-9xl font-bold">O</h1>
-            <h1 className="text-5xl lg:text-9xl font-bold">R</h1>
-            <h1 className="text-5xl lg:text-9xl font-bold">E</h1>
+            <h1 className="text-3xl lg:text-8xl">S</h1>
+            <h1 className="text-3xl lg:text-8xl">O</h1>
+            <h1 className="text-3xl lg:text-8xl">R</h1>
+            <h1 className="text-3xl lg:text-8xl">E</h1>
           </div>
         </div>
 
-        <div className="w-full h-screen flex justify-center items-center">
-          <h1 className="text-5xl lg:text-9xl text-blackPreloading font-bold">
-            Welcome
-          </h1>
+        <div className="w-full h-screen flex justify-center items-center overflow-hidden">
+          <h1 className="text-3xl lg:text-5xl text-blackPreloading">Welcome</h1>
         </div>
       </div>
     </>
