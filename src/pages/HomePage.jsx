@@ -1,16 +1,15 @@
 import React, { useRef } from "react";
-import gsap from "gsap"; // <-- import GSAP
-import { useGSAP } from "@gsap/react"; // <-- import the hook from our React package
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 function HomePage() {
   const container = useRef();
 
   useGSAP(
     () => {
-      // gsap code here...
       const tl = gsap.timeline();
 
-      tl.to("body", {
+      tl.to(".loading-animation", {
         overflow: "hidden",
       })
         .to(".preloader .text-container", {
@@ -39,7 +38,7 @@ function HomePage() {
           ease: "Power3.easeOut",
         })
         .to(
-          "body",
+          ".loading-animation",
           {
             overflow: "auto",
           },
@@ -50,22 +49,26 @@ function HomePage() {
         });
     },
     { scope: container }
-  ); // <-- scope for selector text (optional)
+  );
 
   return (
     <>
-      <div ref={container} className="app">
-        <div className="preloader fixed top-0 left-0 w-full h-full flex justify-center items-center bg-blackPreloading overflow-hidden z-10">
-          <div className="text-container flex flex-row gap-1 overflow-hidden text-white opacity-0">
-            <h1 className="text-3xl lg:text-8xl">S</h1>
-            <h1 className="text-3xl lg:text-8xl">O</h1>
-            <h1 className="text-3xl lg:text-8xl">R</h1>
-            <h1 className="text-3xl lg:text-8xl">E</h1>
+      <div ref={container}>
+        <div className="loading-animation">
+          <div className="preloader fixed top-0 left-0 w-full h-full flex justify-center items-center bg-blackPreloading overflow-hidden z-10">
+            <div className="text-container flex flex-row overflow-hidden gap-[2px] text-white opacity-0">
+              <h1 className="text-3xl lg:text-8xl">S</h1>
+              <h1 className="text-3xl lg:text-8xl">O</h1>
+              <h1 className="text-3xl lg:text-8xl">R</h1>
+              <h1 className="text-3xl lg:text-8xl">E</h1>
+            </div>
           </div>
-        </div>
 
-        <div className="w-full h-screen flex justify-center items-center overflow-hidden">
-          <h1 className="text-3xl lg:text-5xl text-blackPreloading">Welcome</h1>
+          <div className="w-full h-screen flex justify-center items-center overflow-hidden">
+            <h1 className="text-3xl lg:text-5xl text-blackPreloading">
+              Welcome
+            </h1>
+          </div>
         </div>
       </div>
     </>
